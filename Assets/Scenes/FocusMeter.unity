@@ -819,7 +819,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000034332, y: -0.00000453}
-  m_SizeDelta: {x: 138.44, y: 74.033}
+  m_SizeDelta: {x: 880, y: 74.033}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514770148
 MonoBehaviour:
@@ -920,9 +920,9 @@ MonoBehaviour:
   focus: {fileID: 1514770147}
   focusSize: 0.1
   focusPower: 0.15
-  focusPullPower: 0.01
-  focusGravityPower: 0.005
-  focusProgressDegradationPower: 0.1
+  focusPullPower: 0.02
+  focusGravityPower: 0.01
+  focusProgressDegradationPower: 0
   progressBar: {fileID: 534712947}
 --- !u!114 &1633162637
 MonoBehaviour:

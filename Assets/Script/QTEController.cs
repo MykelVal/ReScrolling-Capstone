@@ -5,6 +5,7 @@ using UnityEngine;
 public class QTEController : MonoBehaviour
 {
     public GameObject QTE = null;
+    
 
     public void Start()
     {

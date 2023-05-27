@@ -24,7 +24,7 @@ public class QTE4Controller : MonoBehaviour
 
     IEnumerator WaitBeforeShow4()
     {
-        yield return new WaitForSeconds(25);
+        yield return new WaitForSeconds(40);
         QTE4.SetActive(true);
 
         yield return new WaitForSeconds(20);

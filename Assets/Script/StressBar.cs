@@ -25,6 +25,7 @@ public class StressBar : MonoBehaviour
         lerpSpeed = 3f * Time.deltaTime;
 
         stressBarFiller();
+        ColorChanger();
     }
 
     void stressBarFiller()
@@ -37,6 +38,12 @@ public class StressBar : MonoBehaviour
         }
     }
 
+    void ColorChanger()
+    {
+        Color healthColor = Color.Lerp(Color.red, Color.green, (health / maxHealth));
+        stressBar.color = healthColor;
+
+    }
   
     bool DisplayStressPoint (float _health, int pointNumber)
     {

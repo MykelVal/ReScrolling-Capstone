@@ -24,7 +24,7 @@ public class QTE2Controller : MonoBehaviour
 
     IEnumerator WaitBeforeShow2()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(20);
         QTE2.SetActive(true);
 
         yield return new WaitForSeconds(10);

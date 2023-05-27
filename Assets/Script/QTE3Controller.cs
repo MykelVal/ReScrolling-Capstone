@@ -24,7 +24,7 @@ public class QTE3Controller : MonoBehaviour
 
     IEnumerator WaitBeforeShow3()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(30);
         QTE3.SetActive(true);
 
         yield return new WaitForSeconds(15);

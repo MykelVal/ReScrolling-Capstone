@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     public float startingTime = 15f;
 
     [SerializeField] Text countdownText;
+  
     void Start()
     {
         currentTime = startingTime;

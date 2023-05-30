@@ -31,9 +31,14 @@ public class FocusMeter : MonoBehaviour
     [SerializeField] float focusPower = 0.15f;
     [SerializeField] Transform progressBar;
 
+    [Header("Resources")]
+    [SerializeField] private ResourceSlider productivityObject;
+    [SerializeField] private ResourceTime timeObject;
+
     private void Start()
     {
         SetSize();
+        focusProgress = 0f;
     }
     private void FixedUpdate()
     {
@@ -111,5 +116,16 @@ public class FocusMeter : MonoBehaviour
         }
 
         focusProgress = Mathf.Clamp(focusProgress, 0f, 1f);
+        if (focusProgress >= 1f)
+        {
+            ProgressFull();
+        }
+    }
+
+    private void ProgressFull()
+    {
+        productivityObject.ChangeResourceValue(25);
+        timeObject.AddTime(120);        //to change according to how long task was done
+        FindObjectOfType<UIManager>().FocusPanelToMainGame();
     }
 }

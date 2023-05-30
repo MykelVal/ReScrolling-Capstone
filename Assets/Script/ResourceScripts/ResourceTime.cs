@@ -18,7 +18,7 @@ public class ResourceTime : MonoBehaviour
 
     public void DisplayTime()
     {
-        int hours = Mathf.FloorToInt(timer / 24f);                          //military time hours
+        int hours = Mathf.FloorToInt(timer / 60f);                          //military time hours
         int minutes = Mathf.FloorToInt(timer - hours * 60);                 //minutes
         timeText.text = string.Format("{0:00}:{1:00}", hours, minutes);     //display the time with 0's placeholding the other values
     }

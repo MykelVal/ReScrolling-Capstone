@@ -919,11 +919,13 @@ MonoBehaviour:
   smoothing: 1
   focus: {fileID: 1514770147}
   focusSize: 0.1
-  focusPower: 0.15
-  focusPullPower: 0.02
-  focusGravityPower: 0.01
+  focusPullPower: 0.04
+  focusGravityPower: 0.02
   focusProgressDegradationPower: 0
+  focusPower: 0.15
   progressBar: {fileID: 534712947}
+  productivityObject: {fileID: 0}
+  timeObject: {fileID: 0}
 --- !u!114 &1633162637
 MonoBehaviour:
   m_ObjectHideFlags: 0

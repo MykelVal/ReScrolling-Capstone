@@ -92,9 +92,12 @@ public class FocusMeter : MonoBehaviour
        
         Debug.Log(focusPullVelocity);
 
+        focusPullVelocity = Mathf.Clamp(focusPullVelocity, -0.05f, 0.05f);
         focusPosition += focusPullVelocity;
         focusPosition = Mathf.Clamp(focusPosition, focusSize / 2, 1 - focusSize / 2);
         focus.position = Vector2.Lerp(leftPoint.position, rightPoint.position, focusPosition);
+
+
     }
 
     private void ProgressCheck()

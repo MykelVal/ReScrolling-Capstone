@@ -20,7 +20,7 @@ public class randomImages : MonoBehaviour
        
             GameObject gameObject = Instantiate(imagePrefab[Random.Range(0, imagePrefab.Length)]);
             yield return new WaitForSeconds(secondSpawn);
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 0.1f);
         }
     }
 

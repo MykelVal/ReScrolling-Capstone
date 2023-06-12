@@ -24,9 +24,9 @@ public class FocusTimer : MonoBehaviour
 
     public void DisplayTime()
     {
-        int hours = Mathf.FloorToInt(timer / 60f);                          //military time hours
-        int minutes = Mathf.FloorToInt(timer - hours * 60);                 //minutes
-        timeText.text = string.Format("{0:00}:{1:00}", hours, minutes);     //display the time with 0's placeholding the other values
+        int minutes = Mathf.FloorToInt(timer / 60f);                          //military time hours
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);                 //minutes
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);     //display the time with 0's placeholding the other values
     }
 
     public void ResetTime()
@@ -34,10 +34,10 @@ public class FocusTimer : MonoBehaviour
         timer = totalTime;                                                       //reset time to totalTime (in seconds)
     }
 
-    /*public void Countdown()
+    public void StopTimer()
     {
-        timer -= Time.deltaTime;
-    }*/
+        StopCoroutine(Countdown());
+    }
 
     private System.Collections.IEnumerator Countdown()
     {

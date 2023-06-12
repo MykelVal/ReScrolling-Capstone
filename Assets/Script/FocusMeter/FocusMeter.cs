@@ -63,10 +63,11 @@ public class FocusMeter : MonoBehaviour
 
     private void MoveTaskIcon()
     {
+        float stressMultiplier = stressObject.resourceValue / 66.66f;
         turnTimer -= Time.deltaTime;            //countdown for when the chasee/task changes position
         if (turnTimer < 0)
         {
-            turnTimer = UnityEngine.Random.value * timeMultiplier;              //sets a random time based on the timeMultiplier (in seconds)
+            turnTimer = UnityEngine.Random.value * (timeMultiplier - stressMultiplier);              //sets a random time based on the timeMultiplier (in seconds)
 
             taskDestination = UnityEngine.Random.value;             //sets a random value between 0 - 1 which will be the new target destination of the chasee/task
         }

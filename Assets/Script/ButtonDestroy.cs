@@ -7,8 +7,11 @@ public class ButtonDestroy : MonoBehaviour
     [SerializeField]
     GameObject objectToDestroy;
 
-    public void DestroyGameObject()
+    public void whenButtonClicked()
     {
-        Destroy(objectToDestroy);
+        if (objectToDestroy.activeInHierarchy == true)
+            objectToDestroy.SetActive(false);
+        else
+            objectToDestroy.SetActive(true);
     }
 }

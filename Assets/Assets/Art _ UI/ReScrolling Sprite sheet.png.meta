@@ -293,7 +293,7 @@ TextureImporter:
         width: 189
         height: 67
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -314,7 +314,7 @@ TextureImporter:
         width: 74
         height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,6 +322,90 @@ TextureImporter:
       bones: []
       spriteID: f012082d246add548a576317ca3f16e2
       internalID: 1536040141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReScrolling Sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 750
+        width: 585
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf58eb59712c334b861996d9766996c
+      internalID: 170659478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReScrolling Sprite sheet_11
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 585
+        width: 20
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f36aaa5097256148bcc1357c8cf7773
+      internalID: 557440540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReScrolling Sprite sheet_12
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 615
+        width: 65
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8afe897462f1be04f83ee8a2c1772619
+      internalID: -2055065831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReScrolling Sprite sheet_13
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 845
+        width: 385
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 028fd517f7f46524081b5dca47020e28
+      internalID: -1015660861
       vertices: []
       indices: 
       edges: []
@@ -339,6 +423,10 @@ TextureImporter:
     nameFileIdTable:
       ReScrolling Sprite sheet_0: -320836147
       ReScrolling Sprite sheet_1: 49967692
+      ReScrolling Sprite sheet_10: -599499532
+      ReScrolling Sprite sheet_11: 557440540
+      ReScrolling Sprite sheet_12: -2055065831
+      ReScrolling Sprite sheet_13: -1015660861
       ReScrolling Sprite sheet_2: 1739590340
       ReScrolling Sprite sheet_3: -2005766354
       ReScrolling Sprite sheet_4: 336625721

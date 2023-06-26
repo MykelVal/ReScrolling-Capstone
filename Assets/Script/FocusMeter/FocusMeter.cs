@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FocusMeter : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class FocusMeter : MonoBehaviour
 
     [Header("Resources")]
     [SerializeField] private ResourceSlider productivityObject;
-    [SerializeField] private ResourceSlider stressObject;
+    [SerializeField] private StressBar stressObject;
     [SerializeField] private ResourceTime timeObject;
 
     [Header("Timer")]
@@ -63,7 +64,7 @@ public class FocusMeter : MonoBehaviour
 
     private void MoveTaskIcon()
     {
-        float stressMultiplier = stressObject.resourceValue / 66.66f;
+        float stressMultiplier = stressObject.health / 66.66f;
         turnTimer -= Time.deltaTime;            //countdown for when the chasee/task changes position
         if (turnTimer < 0)
         {

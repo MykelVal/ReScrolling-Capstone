@@ -9,7 +9,7 @@ public class StressBar : MonoBehaviour
     public Image stressBar;
     public Image[] stressPoints;
 
-    float health, maxHealth = 100;
+    public float health, maxHealth = 100;
     float lerpSpeed;
     // Start is called before the first frame update
     void Start()

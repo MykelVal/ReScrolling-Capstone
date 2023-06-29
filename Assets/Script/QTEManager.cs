@@ -6,6 +6,7 @@ public class QTEManager : MonoBehaviour
 {
     //[SerializeField] private List<GameObject> QTE = new List<GameObject>();
     [SerializeField] private GameObject QTEPrefab;
+    [SerializeField] private Transform QTEPos;
 
     //countdown to next qte
     //instantiate qteprefab
@@ -14,24 +15,20 @@ public class QTEManager : MonoBehaviour
     //turn off qte after timer
     //start countdown to next qte
 
-    /*public void Start()
+    public void Start()
     {
-        StartCoroutine(WaitBeforeShow());
+        //countdown to next qte
+        StartCoroutine(WaitBeforeShowingQTE());
     }
 
     private void ShowQTE()
     {
-        QTE.SetActive(true);
     }
 
-    IEnumerator WaitBeforeShow()
+    IEnumerator WaitBeforeShowingQTE()
     {
         yield return new WaitForSeconds(10);
-        QTE.SetActive(true);
-
-        yield return new WaitForSeconds(5);
-        QTE.SetActive(false);
-
-
-    }*/
+        //instantiate qteprefab
+        GameObject gameObject = Instantiate(QTEPrefab, QTEPos.position, Quaternion.identity);
+    }
 }

@@ -42,7 +42,7 @@ public class FocusMeter : MonoBehaviour
 
     private void Start()
     {
-        SetSize();
+        //SetSize();
         focusProgress = 0f;
     }
     private void FixedUpdate()
@@ -52,15 +52,15 @@ public class FocusMeter : MonoBehaviour
         ProgressCheck();            //controls the progress bar
     }
 
-    private void SetSize()
+    /*private void SetSize()
     {
         focus.localScale = new Vector3(focusSize, 1, 1);
         
-        /*Vector2 ls = focus.localScale;
+        *//*Vector2 ls = focus.localScale;
         float distance = Vector2.Distance(leftPoint.position, rightPoint.position);
         ls.x = (distance / xSize * focusSize);
-        focus.localScale = ls;*/
-    }
+        focus.localScale = ls;*//*
+    }*/
 
     private void MoveTaskIcon()
     {

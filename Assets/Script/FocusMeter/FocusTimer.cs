@@ -19,7 +19,7 @@ public class FocusTimer : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(timer);
+        //Debug.Log(timer);
     }
 
     public void DisplayTime()
@@ -43,9 +43,9 @@ public class FocusTimer : MonoBehaviour
     {
         while (timer > 0)
         {
+            DisplayTime();
             yield return new WaitForSeconds(1f);
             timer--;
-            DisplayTime();
         }
 
         if (timer <= 0)

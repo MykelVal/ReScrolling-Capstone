@@ -480,7 +480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73359970}
   - component: {fileID: 73359971}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TaskIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,12 +495,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73359969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9169.484}
-  m_LocalScale: {x: 101.88317, y: 101.88317, z: 101.88317}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1913005015}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &73359971
 SpriteRenderer:
@@ -543,7 +543,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 557440540, guid: 9e75cf812851a7f44b8840fd6ca688f6, type: 3}
+  m_Sprite: {fileID: -2055065831, guid: 9e75cf812851a7f44b8840fd6ca688f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3048,7 +3048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &817576331
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3106,7 +3106,7 @@ MonoBehaviour:
   timeMultiplier: 3
   smoothing: 1
   focus: {fileID: 1033092597}
-  focusSize: 0.1
+  focusSize: 0.2
   focusPullPower: 0.04
   focusGravityPower: 0.02
   focusProgressDegradationPower: 0
@@ -4623,7 +4623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1033092597}
   - component: {fileID: 1033092599}
-  - component: {fileID: 1033092598}
+  - component: {fileID: 1033092601}
   m_Layer: 5
   m_Name: FocusZone
   m_TagString: Untagged
@@ -4639,19 +4639,27 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033092596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1913005015}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000034332, y: -0.00000453}
-  m_SizeDelta: {x: 880, y: 74.033}
+  m_SizeDelta: {x: 20, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1033092598
+--- !u!222 &1033092599
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033092596}
+  m_CullTransparentMesh: 1
+--- !u!114 &1033092601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4671,7 +4679,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 170659478, guid: 9e75cf812851a7f44b8840fd6ca688f6, type: 3}
+  m_Sprite: {fileID: 557440540, guid: 9e75cf812851a7f44b8840fd6ca688f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4681,14 +4689,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1033092599
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033092596}
-  m_CullTransparentMesh: 1
 --- !u!1 &1040221184
 GameObject:
   m_ObjectHideFlags: 0
@@ -6352,7 +6352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1485883583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6644,7 +6644,7 @@ RectTransform:
   - {fileID: 1837386692}
   - {fileID: 515245986}
   m_Father: {fileID: 1913005015}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7863,9 +7863,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 73359970}
   - {fileID: 1033092597}
   - {fileID: 1617183592}
-  - {fileID: 73359970}
   m_Father: {fileID: 817576331}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

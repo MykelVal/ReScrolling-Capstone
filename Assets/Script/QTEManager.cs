@@ -8,6 +8,11 @@ public class QTEManager : MonoBehaviour
     [SerializeField] private GameObject QTEPrefab;
     [SerializeField] private Transform QTEPos;
 
+    [SerializeField] private float countdownSeconds = 10f;
+    private bool countdownOngoing;
+    public bool isThereAQTE;
+
+    private GameObject prefabObject;
     //countdown to next qte
     //instantiate qteprefab
     //stop countdown
@@ -15,20 +20,39 @@ public class QTEManager : MonoBehaviour
     //turn off qte after timer
     //start countdown to next qte
 
-    public void Start()
+    private void Update()
     {
-        //countdown to next qte
-        StartCoroutine(WaitBeforeShowingQTE());
-    }
+        //see if there is a QTE in the scene
+        var timerObject = FindObjectOfType(typeof(Timer));
 
-    private void ShowQTE()
-    {
+        if (timerObject != null)
+        {
+            isThereAQTE = true;
+        }
+        else isThereAQTE = false;
+
+        //if there is no current qte in the scene and the countdown hasnt started...
+        if (!isThereAQTE && !countdownOngoing)
+        {
+            countdownOngoing = true;
+
+            //start countdown
+            StartCoroutine(WaitBeforeShowingQTE());
+        }
     }
 
     IEnumerator WaitBeforeShowingQTE()
     {
-        yield return new WaitForSeconds(10);
+        //countdown to 10 seconds
+        yield return new WaitForSeconds(countdownSeconds);
+
         //instantiate qteprefab
-        GameObject gameObject = Instantiate(QTEPrefab, QTEPos.position, Quaternion.identity);
+        prefabObject = Instantiate(QTEPrefab, QTEPos.position, Quaternion.identity);
+        //set it to be a child of QTEPos object
+        prefabObject.transform.SetParent(QTEPos);
+        //set scale to 1
+        prefabObject.transform.localScale = Vector3.one;
+
+        countdownOngoing = false;
     }
 }

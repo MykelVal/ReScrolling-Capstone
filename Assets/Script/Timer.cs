@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     float currentTime;
-    public float startingTime = 15f;
+    [SerializeField] private float startingTime = 10f;
 
     [SerializeField] Text countdownText;
   
@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            // Your Code Here
+            Destroy(gameObject);
         }
     }
 }

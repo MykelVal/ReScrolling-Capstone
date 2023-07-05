@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FocusMeter : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class FocusMeter : MonoBehaviour
     [Header("Focus")]
     [SerializeField] Transform focus;
     float focusPosition;
-    [SerializeField] float focusSize = 0.1f;
+    [SerializeField] float focusSize = 0.01f;
     float focusPullVelocity;
     [SerializeField] float focusPullPower = 0.1f;
     [SerializeField] float focusGravityPower = 0.005f;
@@ -33,11 +34,15 @@ public class FocusMeter : MonoBehaviour
 
     [Header("Resources")]
     [SerializeField] private ResourceSlider productivityObject;
+    [SerializeField] private StressBar stressObject;
     [SerializeField] private ResourceTime timeObject;
+
+    [Header("Timer")]
+    [SerializeField] private FocusTimer countdownTimer;
 
     private void Start()
     {
-        SetSize();
+        //SetSize();
         focusProgress = 0f;
     }
     private void FixedUpdate()
@@ -47,22 +52,23 @@ public class FocusMeter : MonoBehaviour
         ProgressCheck();            //controls the progress bar
     }
 
-    private void SetSize()
+    /*private void SetSize()
     {
         focus.localScale = new Vector3(focusSize, 1, 1);
         
-        /*Vector2 ls = focus.localScale;
+        *//*Vector2 ls = focus.localScale;
         float distance = Vector2.Distance(leftPoint.position, rightPoint.position);
         ls.x = (distance / xSize * focusSize);
-        focus.localScale = ls;*/
-    }
+        focus.localScale = ls;*//*
+    }*/
 
     private void MoveTaskIcon()
     {
+        float stressMultiplier = stressObject.health / 66.66f;
         turnTimer -= Time.deltaTime;            //countdown for when the chasee/task changes position
         if (turnTimer < 0)
         {
-            turnTimer = UnityEngine.Random.value * timeMultiplier;              //sets a random time based on the timeMultiplier (in seconds)
+            turnTimer = UnityEngine.Random.value * (timeMultiplier - stressMultiplier);              //sets a random time based on the timeMultiplier (in seconds)
 
             taskDestination = UnityEngine.Random.value;             //sets a random value between 0 - 1 which will be the new target destination of the chasee/task
         }
@@ -92,9 +98,12 @@ public class FocusMeter : MonoBehaviour
        
         Debug.Log(focusPullVelocity);
 
+        focusPullVelocity = Mathf.Clamp(focusPullVelocity, -0.05f, 0.05f);
         focusPosition += focusPullVelocity;
         focusPosition = Mathf.Clamp(focusPosition, focusSize / 2, 1 - focusSize / 2);
         focus.position = Vector2.Lerp(leftPoint.position, rightPoint.position, focusPosition);
+
+
     }
 
     private void ProgressCheck()
@@ -103,8 +112,8 @@ public class FocusMeter : MonoBehaviour
         ls.x = focusProgress;
         progressBar.localScale = ls;
 
-        float min = focusPosition - focusSize / 2;
-        float max = focusPosition + focusSize / 2;
+        float min = focusPosition - focusSize * 2;
+        float max = focusPosition + focusSize * 2;
 
         if (min < taskPosition && taskPosition < max)
         {
@@ -124,8 +133,34 @@ public class FocusMeter : MonoBehaviour
 
     private void ProgressFull()
     {
+        float cTimer = countdownTimer.timer;
+
+        //stop the countdown timer
+        countdownTimer.StopTimer();
+
+        //add productivity resource
         productivityObject.ChangeResourceValue(25);
-        timeObject.AddTime(120);        //to change according to how long task was done
+
+        //add to time resource depending on how long the player finished the focus minigame
+        if (cTimer <= 60 && cTimer > 0)
+        {
+            timeObject.AddTime(180);
+        }
+        else if (cTimer <= 120 && cTimer >= 60)
+        {
+            timeObject.AddTime(120);
+        }
+        else if (cTimer <= 180 && cTimer >= 120)
+        {
+            timeObject.AddTime(60);
+        }
+        else if (cTimer == 0)
+        {
+            timeObject.AddTime(240);
+        }
+        Debug.Log("progress done");
+
+        //return to game panel
         FindObjectOfType<UIManager>().FocusPanelToMainGame();
     }
 }

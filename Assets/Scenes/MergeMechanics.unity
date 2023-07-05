@@ -2875,7 +2875,9 @@ MonoBehaviour:
   focusPower: 0.15
   progressBar: {fileID: 1848744904}
   productivityObject: {fileID: 1315853513}
+  stressObject: {fileID: 0}
   timeObject: {fileID: 1589503216}
+  countdownTimer: {fileID: 0}
 --- !u!114 &1503288756
 MonoBehaviour:
   m_ObjectHideFlags: 0

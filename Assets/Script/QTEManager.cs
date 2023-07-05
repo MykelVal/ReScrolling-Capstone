@@ -12,6 +12,8 @@ public class QTEManager : MonoBehaviour
     private bool countdownOngoing;
     public bool isThereAQTE;
 
+    public int countQTE;
+
     private GameObject prefabObject;
     //countdown to next qte
     //instantiate qteprefab
@@ -53,6 +55,7 @@ public class QTEManager : MonoBehaviour
         //set scale to 1
         prefabObject.transform.localScale = Vector3.one;
 
+        countQTE++;
         countdownOngoing = false;
     }
 }

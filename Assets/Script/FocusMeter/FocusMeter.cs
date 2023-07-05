@@ -112,8 +112,8 @@ public class FocusMeter : MonoBehaviour
         ls.x = focusProgress;
         progressBar.localScale = ls;
 
-        float min = focusPosition - focusSize / 2;
-        float max = focusPosition + focusSize / 2;
+        float min = focusPosition - focusSize * 2;
+        float max = focusPosition + focusSize * 2;
 
         if (min < taskPosition && taskPosition < max)
         {
@@ -158,6 +158,7 @@ public class FocusMeter : MonoBehaviour
         {
             timeObject.AddTime(240);
         }
+        Debug.Log("progress done");
 
         //return to game panel
         FindObjectOfType<UIManager>().FocusPanelToMainGame();

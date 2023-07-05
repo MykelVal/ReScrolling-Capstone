@@ -13,7 +13,7 @@ public class ResourceSlider : MonoBehaviour
     public void SetResource()
     {
         resourceSlider.value = resourceValue;                   //sets the slider's value to the current resource value - possibly remove later and just directly use resourceSlider.value
-        resourceText.text = $"{resourceSlider.value}%";         //sets the text of the resource to the current value
+        //resourceText.text = $"{resourceSlider.value}%";         //sets the text of the resource to the current value
     }
 
     public void ChangeResourceValue(int toAdd)

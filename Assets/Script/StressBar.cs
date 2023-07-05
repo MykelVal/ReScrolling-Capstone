@@ -20,7 +20,7 @@ public class StressBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = health + "%";
+        //healthText.text = health + "%";
         if (health > maxHealth) health = maxHealth;
         lerpSpeed = 3f * Time.deltaTime;
 

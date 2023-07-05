@@ -6,27 +6,37 @@ public class randomImages : MonoBehaviour
 {
     [SerializeField] GameObject[] imagePrefab;
     [SerializeField] float secondSpawn = 5f;
-  
-   
-    // Start is called before the first frame update
-    void Start()
-    {
 
-        StartCoroutine(ImageSpawn());
+    public GameObject imageObject;
+
+    public bool isThereImage;
+
+    // Start is called before the first frame update
+    void Update()
+    {
+        if (!isThereImage && FindObjectOfType<UIManager>().gameObject.GetComponent<UIManager>().isInMainPanel)
+        {
+            isThereImage = true;
+            StartCoroutine(ImageSpawn());
+        }
+        
     }
 
     IEnumerator ImageSpawn()
     {
-        while (true)
+        while (isThereImage)
         {
-       
-            GameObject gameObject = Instantiate(imagePrefab[Random.Range(0, imagePrefab.Length)]);
+            imageObject = Instantiate(imagePrefab[Random.Range(0, imagePrefab.Length)]);
             yield return new WaitForSeconds(secondSpawn);
-            Destroy(gameObject, 0.1f);
+            DestroyImage();
         }
     }
 
-
+    public void DestroyImage()
+    {
+        Destroy(imageObject, 0.1f);
+        isThereImage = false;
+    }
 }
 
   

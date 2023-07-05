@@ -6,8 +6,12 @@ public class ButtonBehavior : MonoBehaviour
 {
     private StressBar stressResource;
     private UIManager uiManager;
+    private ResourceTime resourceTime;
+    private QTEManager qteManager;
     private GameObject stressObject;
     private GameObject uiManagerObject;
+    private GameObject resourceTimeObject;
+    private GameObject qteManagerObject;
 
     [SerializeField] private float damageValue = 10f;
     [SerializeField] private GameObject objectToDestroy;
@@ -19,8 +23,12 @@ public class ButtonBehavior : MonoBehaviour
     {
         stressObject = FindObjectOfType<StressBar>().gameObject;
         uiManagerObject = FindObjectOfType<UIManager>().gameObject;
+        resourceTimeObject = FindObjectOfType<ResourceTime>().gameObject;
+        qteManagerObject = FindObjectOfType<QTEManager>().gameObject;
         stressResource = stressObject.GetComponent<StressBar>();
         uiManager = uiManagerObject.GetComponent<UIManager>();
+        resourceTime = resourceTimeObject.GetComponent<ResourceTime>();
+        qteManager = qteManagerObject.GetComponent<QTEManager>();
     }
 
     public void DamageStress()
@@ -36,5 +44,19 @@ public class ButtonBehavior : MonoBehaviour
     public void DestroyQTE()
     {
         Destroy(objectToDestroy);
+    }
+
+    public void ProgressTime()
+    {
+        resourceTime.AddTime(60);
+    }
+
+    public void CheckIfEnoughForMinigame()
+    {
+        if (qteManager.countQTE >= qteManager.maxCountQTE)
+        {
+            qteManager.countQTE = 0;
+            uiManager.MainGameToFocusPanel();
+        }
     }
 }

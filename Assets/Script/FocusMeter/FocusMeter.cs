@@ -21,7 +21,7 @@ public class FocusMeter : MonoBehaviour
     [Header("Focus")]
     [SerializeField] Transform focus;
     float focusPosition;
-    [SerializeField] float focusSize = 0.1f;
+    [SerializeField] float focusSize = 0.01f;
     float focusPullVelocity;
     [SerializeField] float focusPullPower = 0.1f;
     [SerializeField] float focusGravityPower = 0.005f;

@@ -11,6 +11,8 @@ public class FocusTimer : MonoBehaviour
     public float timer;
     public float totalTime;
 
+    [SerializeField] private Image radialTimer;
+
     private void OnEnable()
     {
         ResetTime();
@@ -46,6 +48,7 @@ public class FocusTimer : MonoBehaviour
             DisplayTime();
             yield return new WaitForSeconds(1f);
             timer--;
+            radialTimer.fillAmount = timer / totalTime;
         }
 
         if (timer <= 0)

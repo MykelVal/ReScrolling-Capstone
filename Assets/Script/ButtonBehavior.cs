@@ -53,10 +53,10 @@ public class ButtonBehavior : MonoBehaviour
 
     public void CheckIfEnoughForMinigame()
     {
-        if (qteManager.countQTE >= 4)
+        if (qteManager.countQTE >= qteManager.maxCountQTE)
         {
             qteManager.countQTE = 0;
-            MainGameToFocusPanel();
+            uiManager.MainGameToFocusPanel();
         }
     }
 }

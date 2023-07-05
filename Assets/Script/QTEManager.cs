@@ -13,14 +13,9 @@ public class QTEManager : MonoBehaviour
     public bool isThereAQTE;
 
     public int countQTE;
+    public int maxCountQTE;
 
     private GameObject prefabObject;
-    //countdown to next qte
-    //instantiate qteprefab
-    //stop countdown
-    //start timer for current qte
-    //turn off qte after timer
-    //start countdown to next qte
 
     private void Update()
     {

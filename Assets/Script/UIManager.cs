@@ -9,12 +9,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject mainGameParent;
     [SerializeField] GameObject focusMinigameParent;
     [SerializeField] randomImages randomImages;
+    [SerializeField] RandomTitles randomTitles;
 
     public bool isInMainPanel;
 
     public void MainGameToFocusPanel()
     {
         randomImages.DestroyImage();
+        randomTitles.DestroyTitle();
         isInMainPanel = false;
         mainGameParent.SetActive(false);
         focusMinigameParent.SetActive(true);

@@ -204,10 +204,10 @@ TextureImporter:
       name: ReScrolling Sprite sheet_4
       rect:
         serializedVersion: 2
-        x: 1357
-        y: 483
-        width: 495
-        height: 457
+        x: 1360
+        y: 495
+        width: 485
+        height: 430
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,7 +419,7 @@ TextureImporter:
         width: 152
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 2, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

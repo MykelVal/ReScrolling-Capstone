@@ -5,7 +5,7 @@ using UnityEngine;
 public class QTEManager : MonoBehaviour
 {
     //[SerializeField] private List<GameObject> QTE = new List<GameObject>();
-    [SerializeField] private GameObject QTEPrefab;
+    [SerializeField] private GameObject[] QTEPrefab;
     [SerializeField] private Transform QTEPos;
 
     [SerializeField] private float countdownSeconds = 10f;
@@ -44,7 +44,7 @@ public class QTEManager : MonoBehaviour
         yield return new WaitForSeconds(countdownSeconds);
 
         //instantiate qteprefab
-        prefabObject = Instantiate(QTEPrefab, QTEPos.position, Quaternion.identity);
+        prefabObject = Instantiate(QTEPrefab[Random.Range(0, QTEPrefab.Length)], QTEPos.position, Quaternion.identity);
         //set it to be a child of QTEPos object
         prefabObject.transform.SetParent(QTEPos);
         //set scale to 1

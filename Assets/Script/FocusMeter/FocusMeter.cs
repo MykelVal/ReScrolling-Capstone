@@ -64,7 +64,7 @@ public class FocusMeter : MonoBehaviour
 
     private void MoveTaskIcon()
     {
-        float stressMultiplier = stressObject.health / 66.66f;
+        float stressMultiplier = stressObject.health / 0.66f;
         turnTimer -= Time.deltaTime;            //countdown for when the chasee/task changes position
         if (turnTimer < 0)
         {

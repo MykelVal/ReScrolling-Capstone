@@ -43,6 +43,7 @@ public class ButtonBehavior : MonoBehaviour
 
     public void DestroyQTE()
     {
+        CheckIfEnoughForMinigame();
         Destroy(objectToDestroy);
     }
 

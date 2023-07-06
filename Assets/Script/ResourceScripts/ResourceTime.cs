@@ -8,11 +8,10 @@ public class ResourceTime : MonoBehaviour
 {
     public TextMeshProUGUI timeText;
 
-    public float timer;
+    public static float timer;
 
     private void Update()
     {
-        Debug.Log(timer);
         DisplayTime();                  //will probably remove for optimization, will only call the function after a task ends
     }
 

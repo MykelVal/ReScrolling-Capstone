@@ -431,6 +431,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ReScrolling Sprite sheet_15
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 830
+        width: 105
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8443dd6755a6543bf2bf55d3de73c0
+      internalID: 1956823739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReScrolling Sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 830
+        width: 105
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca498de213540f458dd812cdf1e4a69
+      internalID: -187078370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReScrolling Sprite sheet_17
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 770
+        width: 105
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd9e92a9f16c2945b0e7ffcead072e2
+      internalID: -266090767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReScrolling Sprite sheet_18
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 710
+        width: 105
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5a5bdbbad565b4d9402145ec5ad2b4
+      internalID: -634780125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -449,6 +533,10 @@ TextureImporter:
       ReScrolling Sprite sheet_12: -2055065831
       ReScrolling Sprite sheet_13: -1015660861
       ReScrolling Sprite sheet_14: 1615793863
+      ReScrolling Sprite sheet_15: 1956823739
+      ReScrolling Sprite sheet_16: -187078370
+      ReScrolling Sprite sheet_17: -266090767
+      ReScrolling Sprite sheet_18: -634780125
       ReScrolling Sprite sheet_2: 1739590340
       ReScrolling Sprite sheet_3: -2005766354
       ReScrolling Sprite sheet_4: 336625721

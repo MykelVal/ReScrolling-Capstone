@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private float startingTime = 10f;
 
     [SerializeField] Text countdownText;
+    [SerializeField] ButtonBehavior buttonBehavior;
   
     void Start()
     {
@@ -22,6 +23,7 @@ public class Timer : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
+            buttonBehavior.TimerDamageStress();
             Destroy(gameObject);
         }
     }

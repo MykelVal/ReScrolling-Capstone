@@ -40,6 +40,8 @@ public class FocusMeter : MonoBehaviour
     [Header("Timer")]
     [SerializeField] private FocusTimer countdownTimer;
 
+    public static int taskDone;
+
     private void Start()
     {
         //SetSize();
@@ -127,6 +129,7 @@ public class FocusMeter : MonoBehaviour
         focusProgress = Mathf.Clamp(focusProgress, 0f, 1f);
         if (focusProgress >= 1f)
         {
+            ProgressReset();
             ProgressFull();
         }
     }
@@ -139,18 +142,18 @@ public class FocusMeter : MonoBehaviour
         countdownTimer.StopTimer();
 
         //add productivity resource
-        productivityObject.ChangeResourceValue(25);
+        taskDone++;
 
         //add to time resource depending on how long the player finished the focus minigame
-        if (cTimer <= 60 && cTimer > 0)
+        if (cTimer <= 20 && cTimer > 0)
         {
             timeObject.AddTime(180);
         }
-        else if (cTimer <= 120 && cTimer >= 60)
+        else if (cTimer <= 40 && cTimer >= 20)
         {
             timeObject.AddTime(120);
         }
-        else if (cTimer <= 180 && cTimer >= 120)
+        else if (cTimer <= 60 && cTimer >= 40)
         {
             timeObject.AddTime(60);
         }
@@ -162,5 +165,16 @@ public class FocusMeter : MonoBehaviour
 
         //return to game panel
         FindObjectOfType<UIManager>().FocusPanelToMainGame();
+    }
+
+    private void ProgressReset()
+    {
+        focusProgress = 0f;
+    }
+
+    public static void TasksReset()
+    {
+        WinLose.totalTasks += taskDone;
+        taskDone = 0;
     }
 }

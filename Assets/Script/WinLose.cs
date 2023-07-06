@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class WinLose : MonoBehaviour
+{
+    [SerializeField] private StressBar stressBar;
+    [SerializeField] private UIManager uiManager;
+    [SerializeField] private GameObject pauseBtn;
+    [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI tasksText;
+
+    public static int totalTasks;
+
+    private void Update()
+    {
+        CheckIfLose();
+        CheckIfWin();
+    }
+
+    public void CheckIfLose()
+    {
+        if (stressBar.health <= 0)
+        {
+            //lose process
+            uiManager.PauseGame();
+            pauseBtn.SetActive(false);
+            losePanel.SetActive(true);
+        }
+    }
+
+    public void CheckIfWin()
+    {
+        if (DayManager.day >= 6)
+        {
+            //win process
+            uiManager.PauseGame();
+            pauseBtn.SetActive(false);
+            winPanel.SetActive(true);
+            healthText.text = $"Remaining Health: {stressBar.health}";
+            tasksText.text = $"Total Tasks Done: {totalTasks} / 15";
+        }
+    }
+}

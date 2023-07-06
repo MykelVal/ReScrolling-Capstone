@@ -24,11 +24,11 @@ public class StressBar : MonoBehaviour
         if (health > maxHealth) health = maxHealth;
         lerpSpeed = 3f * Time.deltaTime;
 
-        stressBarFiller();
+        StressBarFiller();
         ColorChanger();
     }
 
-    void stressBarFiller()
+    void StressBarFiller()
     {
         stressBar.fillAmount = Mathf.Lerp(stressBar.fillAmount, (health / maxHealth), lerpSpeed);
 

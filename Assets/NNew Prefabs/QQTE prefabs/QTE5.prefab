@@ -697,6 +697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingTime: 10
   countdownText: {fileID: 6189572684698818656}
+  buttonBehavior: {fileID: 4687839093371634925}
 --- !u!114 &4687839093371634925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,6 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValue: 10
+  timerDamage: 5
   objectToDestroy: {fileID: 6189572685236598644}
 --- !u!1 &6189572685236598644
 GameObject:

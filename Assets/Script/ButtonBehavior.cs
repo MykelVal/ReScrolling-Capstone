@@ -14,6 +14,7 @@ public class ButtonBehavior : MonoBehaviour
     private GameObject qteManagerObject;
 
     [SerializeField] private float damageValue = 10f;
+    [SerializeField] private float timerDamage = 5f;
     [SerializeField] private GameObject objectToDestroy;
 
     //if pressed yes, minus stress
@@ -36,6 +37,11 @@ public class ButtonBehavior : MonoBehaviour
         stressResource.Damage(damageValue);
     }
 
+    public void TimerDamageStress()
+    {
+        stressResource.Damage(timerDamage);
+    }
+
     public void MainGameToFocusPanel()
     {
         uiManager.MainGameToFocusPanel();
@@ -54,7 +60,7 @@ public class ButtonBehavior : MonoBehaviour
 
     public void CheckIfEnoughForMinigame()
     {
-        if (qteManager.countQTE >= qteManager.maxCountQTE)
+        if (qteManager.countQTE >= qteManager.maxCountQTE && FocusMeter.taskDone < 3)
         {
             qteManager.countQTE = 0;
             uiManager.MainGameToFocusPanel();

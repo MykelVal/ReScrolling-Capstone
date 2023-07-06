@@ -386,7 +386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 123.9, y: -7}
+  m_AnchoredPosition: {x: 122.8, y: -7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &843074046
@@ -792,7 +792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168.6, y: -13.1}
+  m_AnchoredPosition: {x: 167.5, y: -13.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1130816023
@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 1258561780}
   - component: {fileID: 1258561782}
   - component: {fileID: 1258561781}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NewScrolling_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1087,6 +1087,9 @@ MonoBehaviour:
   - {fileID: 6676483506258186313, guid: 6e2be058e6746924fb9e00ed3b40f573, type: 3}
   - {fileID: 5443427812955338844, guid: b905b02e06bf74a449f33b431c119ca0, type: 3}
   secondSpawn: 10
+  titlePos: {fileID: 0}
+  isThereTitle: 0
+  titleObject: {fileID: 0}
 --- !u!4 &1611514809
 Transform:
   m_ObjectHideFlags: 0
@@ -1143,6 +1146,7 @@ MonoBehaviour:
   - {fileID: 4023378205923052747, guid: 93c072bbb8d904b469fee74c9928feb9, type: 3}
   - {fileID: 3005666665166857218, guid: b39156f6b3788ea4eba82c7c59b20849, type: 3}
   secondSpawn: 10
+  newsPos: {fileID: 0}
   imageObject: {fileID: 0}
   isThereImage: 0
 --- !u!4 &1679951140
@@ -1251,7 +1255,7 @@ GameObject:
   - component: {fileID: 1816606574}
   - component: {fileID: 1816606576}
   - component: {fileID: 1816606575}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ReScrolling Sprite sheet_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1334,7 +1338,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 49967692, guid: 9e75cf812851a7f44b8840fd6ca688f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1422,6 +1426,9 @@ MonoBehaviour:
   - {fileID: 7502826132620022239, guid: e25f941e176d646448a41bc87e52d316, type: 3}
   - {fileID: 5790511254480616837, guid: 1a920f19d6a9df94eb3b48e02885ac42, type: 3}
   secondSpawn: 10
+  titlePos: {fileID: 0}
+  isThereTitle: 0
+  titleObject: {fileID: 0}
 --- !u!82 &1919065665
 AudioSource:
   m_ObjectHideFlags: 0

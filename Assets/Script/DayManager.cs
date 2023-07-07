@@ -6,7 +6,7 @@ using TMPro;
 
 public class DayManager : MonoBehaviour
 {
-    public static int day;
+    public static int day = 1;
     [SerializeField] private GameObject dayPanel;
     [SerializeField] private TextMeshProUGUI dayText;
 

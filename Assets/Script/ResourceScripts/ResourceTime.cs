@@ -8,7 +8,7 @@ public class ResourceTime : MonoBehaviour
 {
     public TextMeshProUGUI timeText;
 
-    public static float timer;
+    public static float timer = 480f;
 
     private void Update()
     {

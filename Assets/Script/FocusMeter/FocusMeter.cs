@@ -52,6 +52,7 @@ public class FocusMeter : MonoBehaviour
         MoveTaskIcon();             //moves the chasee
         MoveFocusBar();             //controls the chaser
         ProgressCheck();            //controls the progress bar
+        Debug.Log(taskDone);
     }
 
     /*private void SetSize()
@@ -66,7 +67,7 @@ public class FocusMeter : MonoBehaviour
 
     private void MoveTaskIcon()
     {
-        float stressMultiplier = stressObject.health / 0.66f;
+        float stressMultiplier = (100 - stressObject.health) / 100f;
         turnTimer -= Time.deltaTime;            //countdown for when the chasee/task changes position
         if (turnTimer < 0)
         {

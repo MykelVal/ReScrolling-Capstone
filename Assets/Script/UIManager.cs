@@ -52,6 +52,7 @@ public class UIManager : MonoBehaviour
         isInMainPanel = true;
         mainGameParent.SetActive(true);
         focusMinigameParent.SetActive(false);
+        UpdateProductivity();
     }
 
     public void BackToMainMenu()

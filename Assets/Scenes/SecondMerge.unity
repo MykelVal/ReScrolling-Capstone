@@ -1121,7 +1121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &495439391
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2287,14 +2287,14 @@ MonoBehaviour:
   leftPoint: {fileID: 1837386692}
   rightPoint: {fileID: 515245986}
   task: {fileID: 73359970}
-  timeMultiplier: 3
+  timeMultiplier: 2
   smoothing: 1
   focus: {fileID: 1033092597}
   focusSize: 0.05
   focusPullPower: 0.04
   focusGravityPower: 0.02
   focusProgressDegradationPower: 0
-  focusPower: 0.15
+  focusPower: 0.1
   progressBar: {fileID: 2033092733}
   productivityObject: {fileID: 0}
   stressObject: {fileID: 1012340309}
@@ -3621,8 +3621,8 @@ MonoBehaviour:
   randomImages: {fileID: 554165633}
   randomTitles: {fileID: 554165635}
   blockInput: {fileID: 1527653541}
-  pausePanel: {fileID: 0}
-  productivityText: {fileID: 0}
+  pausePanel: {fileID: 1932302695}
+  productivityText: {fileID: 2100667924}
   isInMainPanel: 1
 --- !u!4 &1211790201
 Transform:
@@ -5861,7 +5861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1767173848
 RectTransform:
   m_ObjectHideFlags: 0

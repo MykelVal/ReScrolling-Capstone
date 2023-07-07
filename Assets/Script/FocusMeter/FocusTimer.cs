@@ -12,6 +12,7 @@ public class FocusTimer : MonoBehaviour
     public float totalTime;
 
     [SerializeField] private Image radialTimer;
+    [SerializeField] private FocusMeter focusMeter;
 
     private void OnEnable()
     {
@@ -54,6 +55,7 @@ public class FocusTimer : MonoBehaviour
         if (timer <= 0)
         {
             // Do something when the timer finishes
+            focusMeter.focusProgress = 1f;
         }
     }
 

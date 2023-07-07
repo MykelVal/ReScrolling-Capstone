@@ -28,7 +28,7 @@ public class FocusMeter : MonoBehaviour
     [SerializeField] float focusGravityPower = 0.005f;
 
     [Header("Progress Bar")]
-    float focusProgress;
+    public float focusProgress;
     [SerializeField] float focusProgressDegradationPower = 0.1f;
     [SerializeField] float focusPower = 0.15f;
     [SerializeField] Transform progressBar;
@@ -150,6 +150,7 @@ public class FocusMeter : MonoBehaviour
 
         //add productivity resource
         taskDone++;
+        WinLose.totalTasks++;
 
         //add to time resource depending on how long the player finished the focus minigame
         if (cTimer <= 20 && cTimer > 0)
@@ -181,7 +182,6 @@ public class FocusMeter : MonoBehaviour
 
     public static void TasksReset()
     {
-        WinLose.totalTasks += taskDone;
         taskDone = 0;
     }
 }

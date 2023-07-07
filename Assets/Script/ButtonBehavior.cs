@@ -66,7 +66,7 @@ public class ButtonBehavior : MonoBehaviour
 
     public void CheckIfEnoughForMinigame()
     {
-        if (qteManager.countQTE >= qteManager.maxCountQTE && FocusMeter.taskDone < 3)
+        if (qteManager.countQTE >= qteManager.maxCountQTE && FocusMeter.taskDone < 3 && ResourceTime.timer <= 1200)
         {
             qteManager.countQTE = 0;
             uiManager.MainGameToFocusPanel();

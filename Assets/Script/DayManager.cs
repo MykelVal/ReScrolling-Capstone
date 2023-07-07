@@ -9,6 +9,7 @@ public class DayManager : MonoBehaviour
     public static int day = 1;
     [SerializeField] private GameObject dayPanel;
     [SerializeField] private TextMeshProUGUI dayText;
+    [SerializeField] private WinLose winLose;
 
     private void Awake()
     {
@@ -17,7 +18,14 @@ public class DayManager : MonoBehaviour
 
     private void Update()
     {
-        CheckTime();
+        if (day < 5)
+        {
+            CheckTime();
+        }
+        else if (day == 5 && ResourceTime.timer >= 1200)
+        {
+            winLose.hasWon = true;
+        }
     }
 
     public void CheckTime()

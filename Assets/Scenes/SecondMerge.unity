@@ -1693,6 +1693,7 @@ MonoBehaviour:
   winPanel: {fileID: 1353362516}
   healthText: {fileID: 1668830417}
   tasksText: {fileID: 702904842}
+  hasWon: 0
 --- !u!4 &558837381
 Transform:
   m_ObjectHideFlags: 0
@@ -2353,6 +2354,7 @@ MonoBehaviour:
   timer: 0
   totalTime: 60
   radialTimer: {fileID: 1732407919}
+  focusMeter: {fileID: 817576333}
 --- !u!114 &817576333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2367,7 +2369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftPoint: {fileID: 1837386692}
   rightPoint: {fileID: 515245986}
-  audioPlayer: {fileID: 0}
+  audioPlayer: {fileID: 1885475865}
   task: {fileID: 73359970}
   timeMultiplier: 2
   smoothing: 1
@@ -2375,6 +2377,7 @@ MonoBehaviour:
   focusSize: 0.05
   focusPullPower: 0.04
   focusGravityPower: 0.02
+  focusProgress: 0
   focusProgressDegradationPower: 0
   focusPower: 0.07
   progressBar: {fileID: 2033092733}
@@ -4024,6 +4027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dayPanel: {fileID: 1407474066}
   dayText: {fileID: 463038211}
+  winLose: {fileID: 558837380}
 --- !u!4 &1300633446
 Transform:
   m_ObjectHideFlags: 0

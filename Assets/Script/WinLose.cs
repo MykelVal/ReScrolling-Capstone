@@ -13,6 +13,8 @@ public class WinLose : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI tasksText;
 
+    public bool hasWon = false;
+
     public static int totalTasks;
 
     private void Update()
@@ -34,7 +36,7 @@ public class WinLose : MonoBehaviour
 
     public void CheckIfWin()
     {
-        if (DayManager.day >= 6)
+        if (hasWon)
         {
             //win process
             uiManager.PauseGame();
@@ -42,6 +44,9 @@ public class WinLose : MonoBehaviour
             winPanel.SetActive(true);
             healthText.text = $"Remaining Health: {stressBar.health}";
             tasksText.text = $"Total Tasks Done: {totalTasks} / 15";
+
+            DayManager.day = 1;
+            ResourceTime.timer = 480f;
         }
     }
 }

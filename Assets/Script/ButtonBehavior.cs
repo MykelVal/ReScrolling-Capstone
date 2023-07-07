@@ -8,10 +8,13 @@ public class ButtonBehavior : MonoBehaviour
     private UIManager uiManager;
     private ResourceTime resourceTime;
     private QTEManager qteManager;
+    private AudioPlayer audioPlayer;
+
     private GameObject stressObject;
     private GameObject uiManagerObject;
     private GameObject resourceTimeObject;
     private GameObject qteManagerObject;
+    private GameObject audioPlayerObject;
 
     [SerializeField] private float damageValue = 10f;
     [SerializeField] private float timerDamage = 5f;
@@ -26,10 +29,13 @@ public class ButtonBehavior : MonoBehaviour
         uiManagerObject = FindObjectOfType<UIManager>().gameObject;
         resourceTimeObject = FindObjectOfType<ResourceTime>().gameObject;
         qteManagerObject = FindObjectOfType<QTEManager>().gameObject;
+        audioPlayerObject = FindObjectOfType<AudioPlayer>().gameObject;
+
         stressResource = stressObject.GetComponent<StressBar>();
         uiManager = uiManagerObject.GetComponent<UIManager>();
         resourceTime = resourceTimeObject.GetComponent<ResourceTime>();
         qteManager = qteManagerObject.GetComponent<QTEManager>();
+        audioPlayer = audioPlayerObject.GetComponent<AudioPlayer>();
     }
 
     public void DamageStress()
@@ -65,5 +71,10 @@ public class ButtonBehavior : MonoBehaviour
             qteManager.countQTE = 0;
             uiManager.MainGameToFocusPanel();
         }
+    }
+
+    public void PlayClick()
+    {
+        audioPlayer.PlayHeavyClick();
     }
 }

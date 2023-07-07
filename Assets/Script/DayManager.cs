@@ -27,7 +27,7 @@ public class DayManager : MonoBehaviour
             //proceed to next day
             CoroutineManager.PauseAllCoroutines();
             day++;
-            ResourceTime.timer = 600;
+            ResourceTime.timer = 480;
             FocusMeter.TasksReset();
             StartCoroutine(DayTransition());
             CoroutineManager.ResumeAllCoroutines();

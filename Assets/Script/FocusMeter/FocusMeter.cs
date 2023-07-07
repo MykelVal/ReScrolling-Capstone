@@ -8,6 +8,7 @@ public class FocusMeter : MonoBehaviour
     [Header("General")]
     [SerializeField] Transform leftPoint;
     [SerializeField] Transform rightPoint;
+    [SerializeField] AudioPlayer audioPlayer;
 
     [Header("Tasks")]
     [SerializeField] Transform task;
@@ -85,6 +86,11 @@ public class FocusMeter : MonoBehaviour
         if (focusPosition == focusSize / 2 || focusPosition >= 1 - (focusSize / 2) - 0.001)                  //sets the velocity of the chaser/focus to 0 if its at the edge
         {
             focusPullVelocity = 0f;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            audioPlayer.PlayHold();
         }
 
         if (Input.GetMouseButton(0))                //adds focusPullPower to increase the velocity

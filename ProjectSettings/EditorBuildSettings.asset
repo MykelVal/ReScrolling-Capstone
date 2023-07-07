@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: f5005cc2333296742b566017b79056f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PhoneScene.unity
     guid: 069e465aed1633146bb894645029070e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FocusMeter.unity
     guid: 1690243073b6bb94c86ec38c9bf977b7
+  - enabled: 1
+    path: Assets/Scenes/SecondMerge.unity
+    guid: c0644fbcccdc1fc47bb40e8bbd0ecc72
   m_configObjects: {}

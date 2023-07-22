@@ -9,12 +9,14 @@ public class ButtonBehavior : MonoBehaviour
     private ResourceTime resourceTime;
     private QTEManager qteManager;
     private AudioPlayer audioPlayer;
+    private DayManager dayManager;
 
     private GameObject stressObject;
     private GameObject uiManagerObject;
     private GameObject resourceTimeObject;
     private GameObject qteManagerObject;
     private GameObject audioPlayerObject;
+    private GameObject dayManagerObject;
 
     [SerializeField] private float damageValue = 10f;
     [SerializeField] private float timerDamage = 5f;
@@ -30,12 +32,14 @@ public class ButtonBehavior : MonoBehaviour
         resourceTimeObject = FindObjectOfType<ResourceTime>().gameObject;
         qteManagerObject = FindObjectOfType<QTEManager>().gameObject;
         audioPlayerObject = FindObjectOfType<AudioPlayer>().gameObject;
+        dayManagerObject = FindObjectOfType<DayManager>().gameObject;
 
         stressResource = stressObject.GetComponent<StressBar>();
         uiManager = uiManagerObject.GetComponent<UIManager>();
         resourceTime = resourceTimeObject.GetComponent<ResourceTime>();
         qteManager = qteManagerObject.GetComponent<QTEManager>();
         audioPlayer = audioPlayerObject.GetComponent<AudioPlayer>();
+        dayManager = dayManagerObject.GetComponent<DayManager>();
     }
 
     public void DamageStress()
@@ -66,7 +70,7 @@ public class ButtonBehavior : MonoBehaviour
 
     public void CheckIfEnoughForMinigame()
     {
-        if (qteManager.countQTE >= qteManager.maxCountQTE && FocusMeter.taskDone < 3 && ResourceTime.timer <= 1200)
+        if (qteManager.countQTE >= qteManager.maxCountQTE && FocusMeter.taskDone < 3 && ResourceTime.timer < 1140)
         {
             qteManager.countQTE = 0;
             uiManager.MainGameToFocusPanel();

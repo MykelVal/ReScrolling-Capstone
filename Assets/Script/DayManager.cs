@@ -7,14 +7,13 @@ using TMPro;
 public class DayManager : MonoBehaviour
 {
     public static int day = 1;
-    [SerializeField] private GameObject dayPanel;
+    [SerializeField] private GameObject scrollPanel;
     [SerializeField] private TextMeshProUGUI dayText;
     [SerializeField] private WinLose winLose;
+    [SerializeField] private UIManager uiManager;
 
-    private void Awake()
-    {
-        dayPanel.SetActive(false);
-    }
+    public bool isNewDay = false;
+
 
     private void Update()
     {
@@ -33,20 +32,24 @@ public class DayManager : MonoBehaviour
         if (ResourceTime.timer >= 1200)
         {
             //proceed to next day
+            isNewDay = true;
             CoroutineManager.PauseAllCoroutines();
             day++;
             ResourceTime.timer = 480;
             FocusMeter.TasksReset();
-            StartCoroutine(DayTransition());
+            scrollPanel.SetActive(false);
+            uiManager.LoadScreen(scrollPanel, $"Day {day}");
+            //StartCoroutine(DayTransition());
             CoroutineManager.ResumeAllCoroutines();
+            isNewDay = false;
         }
     }
 
-    IEnumerator DayTransition()
+    /*IEnumerator DayTransition()
     {
         dayText.text = $"Day {day}";
         dayPanel.SetActive(true);
         yield return new WaitForSeconds(3);
         dayPanel.SetActive(false);
-    }
+    }*/
 }

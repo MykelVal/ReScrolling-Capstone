@@ -15,6 +15,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject pausePanel;
     [SerializeField] TextMeshProUGUI productivityText;
 
+    [SerializeField] GameObject loadingPanel;
+    [SerializeField] Image loadBar;
+    [SerializeField] TextMeshProUGUI loadingText;
+
     public bool isInMainPanel;
     private bool isPaused = false;
 
@@ -46,19 +50,54 @@ public class UIManager : MonoBehaviour
         randomTitles.DestroyTitle();
         isInMainPanel = false;
         mainGameParent.SetActive(false);
-        focusMinigameParent.SetActive(true);
+        LoadScreen(focusMinigameParent, "Going to do tasks...");
+        StartCoroutine(LoadingScreenWait(focusMinigameParent));
     }
 
     public void FocusPanelToMainGame()
     {
         isInMainPanel = true;
-        mainGameParent.SetActive(true);
         focusMinigameParent.SetActive(false);
+        LoadScreen(mainGameParent, "Back to scrolling...");
     }
 
-    public void BackToMainMenu()
+    public void LoadScreen(GameObject newPanel, string newText)
     {
-        SceneManager.LoadScene(0);
+        //change text
+        loadingText.text = newText;
+
+        StartCoroutine(LoadingScreenWait(newPanel));
+    }
+
+    IEnumerator LoadingScreenWait(GameObject newPanel)
+    {
+        loadBar.fillAmount = 0;
+        loadingPanel.SetActive(true);
+        // Set the starting and target fill amount
+        float startFillAmount = loadBar.fillAmount;
+        float targetFillAmount = 1f; // Target fill amount is 1 since it represents 100%
+
+        // Set the duration of the loading process (2 seconds in this case)
+        float duration = 2f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float percentage = Mathf.Clamp01(timer / duration);
+            float currentFillAmount = Mathf.Lerp(startFillAmount, targetFillAmount, percentage);
+
+            // Apply the smooth fill amount to the loading bar
+            loadBar.fillAmount = currentFillAmount;
+
+            yield return null;
+        }
+
+        // Ensure the loading bar is fully filled before hiding the transition panel
+        loadBar.fillAmount = targetFillAmount;
+
+        loadingPanel.SetActive(false);
+        newPanel.SetActive(true);
     }
 
     public void PauseGame()

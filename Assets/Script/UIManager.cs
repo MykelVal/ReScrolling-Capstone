@@ -18,6 +18,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject loadingPanel;
     [SerializeField] Image loadBar;
     [SerializeField] TextMeshProUGUI loadingText;
+    [SerializeField] GameObject[] tipsPrefab;
+    [SerializeField] Transform tipsPos;
+    private GameObject instantiatedTip;
 
     public bool isInMainPanel;
     private bool isPaused = false;
@@ -51,7 +54,6 @@ public class UIManager : MonoBehaviour
         isInMainPanel = false;
         mainGameParent.SetActive(false);
         LoadScreen(focusMinigameParent, "Going to do tasks...");
-        StartCoroutine(LoadingScreenWait(focusMinigameParent));
     }
 
     public void FocusPanelToMainGame()
@@ -66,6 +68,16 @@ public class UIManager : MonoBehaviour
         //change text
         loadingText.text = newText;
 
+        if (instantiatedTip != null)
+        {
+            Destroy(instantiatedTip);
+
+            instantiatedTip = Instantiate(tipsPrefab[Random.Range(0, tipsPrefab.Length)], tipsPos.position, Quaternion.identity);
+        }
+        else instantiatedTip = Instantiate(tipsPrefab[Random.Range(0, tipsPrefab.Length)], tipsPos.position, Quaternion.identity);
+        instantiatedTip.transform.SetParent(tipsPos);
+        instantiatedTip.transform.localScale = Vector3.one;
+
         StartCoroutine(LoadingScreenWait(newPanel));
     }
 
@@ -77,8 +89,8 @@ public class UIManager : MonoBehaviour
         float startFillAmount = loadBar.fillAmount;
         float targetFillAmount = 1f; // Target fill amount is 1 since it represents 100%
 
-        // Set the duration of the loading process (2 seconds in this case)
-        float duration = 2f;
+        // Set the duration of the loading process (5 seconds in this case)
+        float duration = 5f;
         float timer = 0f;
 
         while (timer < duration)

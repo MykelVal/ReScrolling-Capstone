@@ -1195,7 +1195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.27e-13, y: 47}
+  m_AnchoredPosition: {x: 0, y: 64}
   m_SizeDelta: {x: 366.4, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &463038211
@@ -3917,6 +3917,23 @@ MonoBehaviour:
   loadingPanel: {fileID: 1407474066}
   loadBar: {fileID: 1834512808}
   loadingText: {fileID: 463038211}
+  tipsPrefab:
+  - {fileID: 4513156402739768468, guid: fea922ee501264d4caf5198b52a5c357, type: 3}
+  - {fileID: 7633252527215688164, guid: b2e2731aedb6ca0498a54946ffb8af59, type: 3}
+  - {fileID: 8447797684233848793, guid: e2ed043b014967e46b8aaac9f8366f77, type: 3}
+  - {fileID: 8133709737093175767, guid: 23a1143a89bd7a244911cc6bfa8edae6, type: 3}
+  - {fileID: 49284852622116624, guid: faa9bca3067104b4bb5957074697e10e, type: 3}
+  - {fileID: 6645257325569115933, guid: 372e9aa9a36d7d34fb2c5bc065b34540, type: 3}
+  - {fileID: 387800267986024570, guid: 7248aa508845d97419d5ff7deca90a10, type: 3}
+  - {fileID: 262288402112001763, guid: 6bd3e5fdd656ea24b985736f08ac275a, type: 3}
+  - {fileID: 262288402112001763, guid: 480781106f3d6a44cacc8cfab4590738, type: 3}
+  - {fileID: 262288402112001763, guid: aa489de9e97392e499a1cc99ce3956be, type: 3}
+  - {fileID: 262288402112001763, guid: 15aeb299bd68c8441b2638a257eea970, type: 3}
+  - {fileID: 262288402112001763, guid: 5bfecfa4d01507c4d8131a5382bbe699, type: 3}
+  - {fileID: 262288402112001763, guid: 589e2735c4285bc4ea6e23d03d73d9a5, type: 3}
+  - {fileID: 262288402112001763, guid: 8f8dd1195ac39714db6d4242a7501caa, type: 3}
+  - {fileID: 1280760503471507528, guid: abab9d8bdd6cc724d8dad3cef8617809, type: 3}
+  tipsPos: {fileID: 1783213590}
   isInMainPanel: 1
 --- !u!4 &1211790201
 Transform:
@@ -4324,6 +4341,7 @@ RectTransform:
   m_Children:
   - {fileID: 463038210}
   - {fileID: 1095044446}
+  - {fileID: 1783213590}
   m_Father: {fileID: 1285370000}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6055,6 +6073,42 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.1000253, y: 18.93}
   m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1783213589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783213590}
+  m_Layer: 5
+  m_Name: TipsTextPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1783213590
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783213589}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1407474067}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -55}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1834512806
 GameObject:
